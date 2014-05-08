@@ -1,12 +1,8 @@
 var bot = require('./lib/bot');
 
-// reply with a greeting or say 'wat'
-bot.when(/^boten:\s*(hi|hello|hey)?/, function (res, m) {
-  if (m[1]) {
-    res.send(m[1]);
-  } else {
-    res.send('wat');
-  }
+// reply with hi
+bot.on(/hi/, function (req, res) {
+  res.send('hi');
 });
 
 // set a timer
