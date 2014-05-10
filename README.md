@@ -1,4 +1,5 @@
 # irc-robot
+[![NPM version](https://badge.fury.io/js/irc-robot.svg)](http://badge.fury.io/js/irc-robot)
 
 Small framework for writing irc bots using [node](http://nodejs.org).
 
