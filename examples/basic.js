@@ -1,4 +1,4 @@
-var ircbot = require('./lib/bot');
+var ircbot = require('ircbot');
 
 var bot = ircbot({
   name: 'botname',
