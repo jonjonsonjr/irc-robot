@@ -1,4 +1,4 @@
-var ircbot = require('ircbot');
+var ircbot = require('..');
 
 var bot = ircbot({
   name: 'botname',
@@ -12,7 +12,7 @@ bot.on(/\b[Hh]i\b/, function (req, res) {
 });
 
 // Say 'I am a bot!' every 60 seconds
-bot.every(60 * 000, function (res) {
+bot.every(60 * 1000, function (res) {
   res.send('I am a bot!');
 });
 
