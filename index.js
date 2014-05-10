@@ -7,12 +7,17 @@ function Bot(options) {
   if (!(this instanceof Bot)) {
     return new Bot(options);
   }
-  this.name = options.name || 'bot';
+  this.name = options.name;
+  this.chan = options.chan || options.channel;
+
+  if (this.name === undefined || this.chan === undefined) {
+    throw new Error("name and channel are required options");
+  }
+
   this.pass = options.pass || options.password || 'password';
-  this.chan = options.chan || options.channel || '';
   this.realname = options.realname || 'I am a bot';
-  this.port = options.port || 6667;
   this.server = options.server || 'irc.freenode.org';
+  this.port = options.port || 6667;
   this.debug = options.debug || false;
 
   this.patterns = [];
