@@ -3,25 +3,55 @@
 Small framework for writing irc bots using [node](http://nodejs.org).
 
 ```js
-var bot = require('./lib/bot');
-var nick = 'botname';
-var pass = 'password';
-var chan = '#put channel here';
+var ircbot = require('ircbot');
+
+var bot = ircbot({
+  name: 'botname',
+  pass: 'password',
+  chan: '#channelname'
+});
 
 bot.on(/^hi bot$/, function (req, res) {
   res.send('hello!');
 });
 
-bot.connect(nick, pass, chan);
+bot.connect();
 ```
 
 ## API
 
 This is all very much a work in progress, but so far...
 
+### ircbot(options)
+
+Creates a new bot.
+
+```js
+var ircbot = require('ircbot');
+var bot = ircbot({
+  name: 'botname',
+  chan: '#channelname'
+});
+```
+
+#### Options
+
+##### Required
+
+* `name`
+* `chan` || `channel`
+
+##### Optional
+
+* `password` (default: `"password"`)
+* `realname` (default: `"I am a bot"`)
+* `server` (default: `"irc.freenode.org"`)
+* `port` (default: `6667`)
+* `debug` (default: `false`)
+
 ### bot.on(regex, cb)
 
-When a message in the channel matches regex, the callback will be called.
+Calls the callback when a message in the channel matches the regex.
 
 The callback takes 2 arguments:
 
@@ -44,7 +74,7 @@ bot.on(/^hey (\S+)$/, function (req, res) {
 
 ### bot.onPM(regex, cb)
 
-When a PM to the bot regex, the callback will be called.
+Calls the callback tif a PM to the bot matches the regex.
 
 The callback takes 2 arguments:
 
@@ -67,7 +97,7 @@ bot.onPM(/^hey (\S+)$/, function (req, res) {
 
 ### bot.every(interval, cb)
 
-When a PM to the bot regex, the callback will be called.
+Calls the callback every `interval` milliseconds.
 
 The callback takes 1 argument:
 
@@ -91,10 +121,6 @@ Sends a PM.
 bot.PM('username', 'hey');
 ```
 
-### bot.connect(nick, password, channel[, realname])
+### bot.connect()
 
-Connect to the channel and start listening.
-
-```js
-bot.connect('botname', 'password', '#channel');
-```
+Connects to the channel and starts listening.
