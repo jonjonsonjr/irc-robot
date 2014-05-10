@@ -22,7 +22,7 @@ function Bot(options) {
 
   this.patterns = [];
   this.timers = [];
-};
+}
 
 Bot.prototype.connect = function () {
   var stream = net.connect({
@@ -88,7 +88,7 @@ function addon(bot) {
         console.log(m);
       });
     }
-  }
+  };
 }
 
 function req(e, m) {
