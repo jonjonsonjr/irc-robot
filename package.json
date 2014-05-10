@@ -1,8 +1,16 @@
 {
-  "name": "node-irc-bot",
+  "name": "ircbot",
+  "description": "A simple IRC bot framework.",
   "version": "0.0.1",
-  "description": "Playing with a simple irc bot",
+  "author": "Jon Johnson, Jr.",
   "dependencies": {
     "slate-irc": "0.5.0"
-  }
+  },
+  "scripts": {
+    "prepublish": "npm prune"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "license": "MIT"
 }
