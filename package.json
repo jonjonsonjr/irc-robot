@@ -1,5 +1,5 @@
 {
-  "name": "ircbot",
+  "name": "irc-robot",
   "description": "A simple IRC bot framework.",
   "version": "0.0.1",
   "author": "Jon Johnson, Jr.",

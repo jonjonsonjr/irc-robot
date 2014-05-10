@@ -1,9 +1,9 @@
-# node-irc-bot
+# irc-robot
 
 Small framework for writing irc bots using [node](http://nodejs.org).
 
 ```js
-var ircbot = require('ircbot');
+var ircbot = require('irc-robot');
 
 var bot = ircbot({
   name: 'botname',
@@ -27,7 +27,7 @@ This is all very much a work in progress, but so far...
 Creates a new bot.
 
 ```js
-var ircbot = require('ircbot');
+var ircbot = require('irc-robot');
 var bot = ircbot({
   name: 'botname',
   chan: '#channelname'
