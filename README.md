@@ -75,7 +75,7 @@ bot.on(/^hey (\S+)$/, function (req, res) {
 
 ### bot.onPM(regex, cb)
 
-Calls the callback tif a PM to the bot matches the regex.
+Calls the callback if a PM to the bot matches the regex.
 
 The callback takes 2 arguments:
 
